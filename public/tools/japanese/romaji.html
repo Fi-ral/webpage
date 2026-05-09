@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 	<link href="/styles/style.css" rel="stylesheet">
 	<script src="/scripts/base.js"></script>
+	<script src="/scripts/kana.js"></script>
 </head>
 <body onload="main()">
 	<main>
@@ -17,7 +18,28 @@
         
 		<article>
 			<h1>Wapuro Romaji Converter</h1>
-			<p>To do</p>
+
+			<div>
+				<h4>Output</h4>
+				<div class="romaji-output">
+					<p class="jp-text" id="romaji-output"></p>
+				</div>
+
+				<hr>
+				<h4>Input</h4>
+				<div class="romaji-input">
+					<input type="text" id="romaji-input" oninput="convert()">
+					<button onclick="convert()">Enter</button>
+				</div>
+
+				<hr>
+				<h4>Settings</h4>
+				<div>
+					<ul>
+						<span><input type="checkbox" checked="false" id="setting-katakana-output" onchange="convert()"> Output as Katakana</span>
+					</ul>
+				</div>
+			</div>
 		</article>
 	</main>
 </body>

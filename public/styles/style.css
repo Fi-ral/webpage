@@ -20,6 +20,9 @@ p {
 p > span {
 	display: block;
 }
+p.jp-text {
+    font-size: 16px;
+}
 a {
 	font-size: 14px;
 	text-decoration: none;
@@ -70,6 +73,15 @@ footer {
 img {
     width: 100%;
 }
+button {
+	text-align: right;
+	background: none;
+    border: 1px solid var(--text-color);
+    border-radius: 6px;
+	cursor: pointer;
+	font-size: 14px;
+	font-family: "Noto Sans JP", sans-serif;
+}
 
 main {
 	display: flex;
@@ -86,6 +98,9 @@ article {
     height: 100vh;
     overflow-y: scroll;
     scrollbar-width: thin;
+}
+article hr {
+    width: 1200px;
 }
 
 aside {
@@ -106,7 +121,7 @@ aside a {
 	color: var(--text-color);
 	text-decoration: none;
 }
-aside .not-finished {
+aside.not-finished {
 	text-decoration: underline wavy var(--red-color);
 }
 aside ul {
@@ -120,12 +135,7 @@ aside li {
 	text-decoration: underline dotted;
 }
 .show-more-button {
-	text-align: right;
-	background: none;
-	border: none;
-	cursor: pointer;
-	font-size: 14px;
-	font-family: "Noto Sans JP", sans-serif;
+    border: none;
 }
 
 section#sideboard {
@@ -139,7 +149,6 @@ section#sideboard {
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 20px;
-    border-right: 1px solid var(--text-color);
     scrollbar-width: none;
     transition: transform 0.3s ease;
 }
@@ -150,12 +159,30 @@ section#sideboard {
     position: fixed;
     top: 12px;
     left: 12px;
-    border: 1px solid var(--text-color);
-    border-radius: 6px;
     padding: 6px 10px;
     font-size: 1.2rem;
     cursor: pointer;
     line-height: 1;
+}
+
+.romaji-input {
+    display: flex;
+}
+.romaji-input input {
+    text-align: center;
+    width: 1120px;
+    margin: 20px;
+    min-height: 30px;
+    font-size: 16px;
+}
+.romaji-input button {
+    height: 36px;
+    margin: 20px;
+}
+
+.romaji-output {
+    padding-right: 84px;
+    text-align: center;
 }
 
 @media (max-width: 1549px) {
