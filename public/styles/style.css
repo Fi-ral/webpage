@@ -63,11 +63,12 @@ section {
 	height: 100vh;
 }
 footer {
-	position: absolute;
-	bottom: 0px;
+	padding-bottom: 30px;
 	z-index: 2;
 	width: 250px;
-	background-color: var(--bk-color);
+}
+img {
+    width: 100%;
 }
 
 main {
@@ -157,7 +158,7 @@ section#sideboard {
     line-height: 1;
 }
 
-@media (max-width: 1570px) {
+@media (max-width: 1549px) {
     aside {
         visibility: collapse;
     }
