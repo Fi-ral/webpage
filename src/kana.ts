@@ -78,6 +78,7 @@ const ROMAJI_MAP: Map<string, string> = (() => {
     add('xya','ゃ'); add('xyu','ゅ'); add('xyo','ょ');
     add('xtu','っ'); add('xtsu','っ');
     add('xka','ヵ'); add('xke','ヶ');
+    add('...', '…') 
     add('.','。'); add(',', '、'); add('~', '〜'); add('-', 'ー'); add('*', '・'); add('?', '？'); add('!', '！')
     
     return m;
@@ -161,23 +162,32 @@ function toKatakana(text: string) {
   });
 };
 
-function convert(): void {
+function convert(finished: boolean): void {
     const output = document.getElementById("romaji-output") as HTMLParagraphElement;
     const input = document.getElementById("romaji-input") as HTMLInputElement;
+
     if (input === null || output === null) {
         console.error("Could not find text input target or kana output!")
         return;
     }
 
     const res = convertRomaji(input.value)
+    output.style = ""
     if (res !== "") {
         output.textContent = res;
     } else {
         output.innerHTML = "<i>Enter romaji below to begin.</i>"
     }
+
+    if (!finished)
+        return;
+
+    if ((window as any).counterMain) {
+        (window as any).counterMain(res);
+    }
 }
 
 
 window.addEventListener("load", (event) => {
-    convert();
+    convert(false);
 });

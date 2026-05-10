@@ -9,6 +9,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 	<link href="/styles/style.css" rel="stylesheet">
 	<script src="/scripts/base.js"></script>
+	<script src="/scripts/counters.js"></script>
+	<script src="/scripts/kana.js"></script>
 </head>
 <body onload="main()">
 	<main>
@@ -17,7 +19,55 @@
         
 		<article>
 			<h1>Counter Trainer</h1>
-			<p>To do</p>
+
+			<div>
+				<h4></h4>
+				<div class="romaji-output">
+					<p class="jp-text">
+						<span id="counter-word-kanji"></span>
+						<span id="counter-word-english"></span>
+						<span id="counter-word-number"></span>
+					</p>
+					<p class="jp-text" id="counter-amount"></p>
+					<p class="jp-text" id="romaji-output"></p>
+				</div>
+
+				<hr>
+				<div class="romaji-input">
+					<input type="text" id="romaji-input" oninput="convert(false)" onchange="convert(true)">
+					<button onclick="convert(true)">Enter</button>
+				</div>
+				<p>
+					<span id="display-overall-result">0/0 (0.0%)</span>
+					<span id="display-streak-result">Current Streak: 0</span>
+					<span id="display-best-streak-result">Best Streak: 0</span>
+				</p>
+
+				<hr>
+				<h4>Settings</h4>
+
+				<div id="counter-selection" class="counter-selection">
+					<span title="Reading: まい"><input type="checkbox" checked>〜枚 flat things</span>
+					<span title="Reading: ほん"><input type="checkbox" checked>〜本 long/cylindrical things</span>
+					<span title="Reading: こ" ><input type="checkbox" checked>〜個 small objects</span>
+					<span title="Reading: さつ"><input type="checkbox" checked>〜冊 books & volumes</span>
+					<span title="Reading: かい"><input type="checkbox" checked>〜回 occurences</span>
+					<span title="Reading: ひき"><input type="checkbox"        >〜匹 small animals</span>
+					<span title="Reading: とう"><input type="checkbox"        >〜頭 large animals</span>
+					<span title="Reading: わ" ><input type="checkbox"        >〜羽 birds & rabbits</span>
+					<span title="Reading: はい"><input type="checkbox"        >〜杯 cups, drinks & bowls</span>
+					<span title="Reading: だい"><input type="checkbox"        >〜台 machines & vehicles</span>
+					<span title="Reading: かい"><input type="checkbox"        >〜階 building floors</span>
+					<span title="Reading: にん"><input type="checkbox"        >〜人 people</span>
+					<span title="Reading: さい"><input type="checkbox"        >〜歳 years of age</span>
+					<span title="Reading: ふん"><input type="checkbox"        >〜分 minutes</span>
+				</div>
+						
+				<p>
+					<span><input type="checkbox" id="setting-display-counter" checked>Display counter hint</span>
+					<span><input type="checkbox" id="setting-display-english"        >Display english hint</span>
+				</p>
+			</div>
 		</article>
 	</main>
 </body>

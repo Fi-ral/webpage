@@ -28,19 +28,16 @@
 				<hr>
 				<h4>Input</h4>
 				<div class="romaji-input">
-					<input type="text" id="romaji-input" oninput="convert()">
-					<button onclick="convert()">Enter</button>
+					<input type="text" id="romaji-input" oninput="convert(false)" onchange="convert(true)">
+					<button onclick="convert(true)">Enter</button>
 				</div>
 
 				<hr>
 				<h4>Settings</h4>
 				<div>
-					<ul>
-						<span><input type="checkbox" checked="false" id="setting-katakana-output" onchange="convert()"> Output as Katakana</span>
-					</ul>
+					<span><input type="checkbox" id="setting-katakana-output" onchange="convert(false)"> Output as Katakana</span>
 				</div>
 			</div>
-		</article>
 	</main>
 </body>
 </html>

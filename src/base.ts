@@ -104,4 +104,8 @@ function main() {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') closeSidebar();
     });
+
+    if ((window as any).createNewQuestion) {
+        (window as any).createNewQuestion();
+    }
 }

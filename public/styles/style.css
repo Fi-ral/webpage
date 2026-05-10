@@ -185,6 +185,23 @@ section#sideboard {
     text-align: center;
 }
 
+span#counter-word-kanji {
+    font-size: 70px;
+}
+span#counter-word-english {
+    font-size: 24px;
+}
+span#counter-word-number {
+    font-size: 24px;
+}
+
+.counter-selection {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    gap: 10px;
+    row-gap: 0px;
+}
+
 @media (max-width: 1549px) {
     aside {
         visibility: collapse;
