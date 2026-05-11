@@ -320,13 +320,7 @@ const COUNTERS = {
             11: ['なんさい']
         },
         words: [
-            {ja:'赤ちゃん', en:'baby'},
-            {ja:'子供', en:'child'},
-            {ja:'学生', en:'student'},
-            {ja:'大人', en:'adult'},
-            {ja:'先生', en:'teacher'},
-            {ja:'お年寄り', en:'elderly person'},
-            {ja:'選手', en:'athlete'}
+            {ja:'歳', en:'years'},
         ]
     },
     '分': {
