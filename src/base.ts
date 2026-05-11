@@ -73,7 +73,6 @@ function createSideboard() {
 				<button class="show-more-button" id="button-5" onclick="toggleReveal(5)">+ Show</button>
 				<ul id="hidden-5" style="display: none;">
 					<li><span><a href="/tools/japanese/romaji.html">Wapuro Romaji Converter</a></span></li>
-					<li><span><a href="/tools/japanese/conjugations.html">Conjugation Trainer</a></span></li>
 					<li><span><a href="/tools/japanese/counters.html">Counter Trainer</a></span></li>
 				</ul>
 			</div>
