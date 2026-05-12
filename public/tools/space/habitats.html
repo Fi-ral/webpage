@@ -9,6 +9,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 	<link href="/styles/style.css" rel="stylesheet">
 	<script src="/scripts/base.js"></script>
+	<script src="/scripts/habitat.js"></script>
+	<script src="/scripts/converter.js"></script>
 </head>
 <body onload="main()">
 	<main>
@@ -17,7 +19,115 @@
         
 		<article>
 			<h1>Habitat Calculator</h1>
-			<p>To do</p>
+			<h4>Input</h4>
+			
+			<div onchange="HabitatApp.main()">
+				<div class="generic-calculator-element">
+					<span>Radius<span class="required-marker">*</span></span>
+					<input id="calc-input-radius-value" type="number"></input>
+					<select id="calc-input-radius-unit">
+						<option value="1">m</option>
+						<option value="1000">km</option>
+						<option value="1609.34">mi</option>
+						<option value="299792458">ls</option>
+						<option value="149597870700">AU</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Surface Gravity<span class="required-marker">*</span></span>
+					<input id="calc-input-surface-gravity-value" type="number"></input>
+					<select id="calc-input-surface-gravity-unit">
+						<option value="1">m/s^2</option>
+						<option value="9.81">G</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Rotational Period<span class="required-marker">*</span></span>
+					<input id="calc-input-rotational-period-value" type="number"></input>
+					<select id="calc-input-rotational-period-unit">
+						<option value="1">s</option>
+						<option value="60">min</option>
+						<option value="3600">h</option>
+						<option value="86400">days</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Angular Velocity<span class="required-marker">*</span></span>
+					<input id="calc-input-angular-velocity-value" type="number"></input>
+					<select id="calc-input-angular-velocity-unit">
+						<option value="0.01666666666">rpm</option>
+						<option value="0.01745">°/s</option>
+						<option value="1">rad/s</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Tangential Velocity<span class="required-marker">*</span></span>
+					<input id="calc-input-tangential-velocity-value" type="number"></input>
+					<select id="calc-input-tangential-velocity-unit">
+						<option value="1">m/s</option>
+						<option value="0.277778">km/h</option>
+						<option value="0.44704">mph</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Width</span>
+					<input id="calc-input-width-value" type="number"></input>
+					<select id="calc-input-width-unit">
+						<option value="1">m</option>
+						<option value="1000">km</option>
+						<option value="1609.34">mi</option>
+						<option value="299792458">ls</option>
+						<option value="149597870700">AU</option>
+					</select>
+				</div>
+			</div>
+			
+			<span id="status-report"></span>
+			<hr>
+			
+			<div>
+				<h4>Result</h4>
+				<div class="generic-calculator-element">
+					<span>Radius</span>
+					<span id="calc-output-radius"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Width</span>
+					<span id="calc-output-width"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Surface Gravity</span>
+					<span id="calc-output-surface-gravity"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Angular Velocity</span>
+					<span id="calc-output-angular-velocity"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Tangential Velocity</span>
+					<span id="calc-output-tangential-velocity"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Rotational Period</span>
+					<span id="calc-output-rotational-period"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Surface Area</span>
+					<span id="calc-output-surface-area"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Specific Strength</span>
+					<span id="calc-output-specific-strength"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span title="This is the weakest material that can sustain its own weight without any security factor." class="further-info">Required Material</span>
+					<span id="calc-output-required-material"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span title="This is the weakest material that can sustain its own weight with a security factor of 2x to support an atmosphere, ground and buildings." class="further-info">Recommended Material</span>
+					<span id="calc-output-recommended-material"></span>
+				</div>
+			</div>
 		</article>
 	</main>
 </body>

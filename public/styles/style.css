@@ -34,6 +34,9 @@ span {
 	color: var(--text-color);
 	font-size: 14px;
 }
+span.further-info {
+	text-decoration: underline dotted var(--text-color);
+}
 h1 {
 	color: var(--text-color);
 	font-size: 32px;
@@ -206,6 +209,23 @@ span#counter-word-number {
     grid-template-columns: 200px 200px 200px 200px 200px;
     gap: 10px;
     row-gap: 0px;
+}
+
+.generic-calculator-element {
+	display:grid;
+	grid-template-columns: 160px 200px 60px;
+	gap: 10px;
+	row-gap: 0px;
+}
+.generic-calculator-element > input {
+	text-align: right;
+}
+.generic-calculator-element > select {
+	text-align: right;
+}
+
+.required-marker {
+	color: var(--red-color);
 }
 
 @media (max-width: 1549px) {

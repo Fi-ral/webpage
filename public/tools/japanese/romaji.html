@@ -28,14 +28,14 @@
 				<hr>
 				<h4>Input</h4>
 				<div class="romaji-input">
-					<input type="text" id="romaji-input" oninput="convert(false)" onchange="convert(true)">
-					<button onclick="convert(true)">Enter</button>
+					<input type="text" id="romaji-input" oninput="KanaApp.convert(false)" onchange="convert(true)">
+					<button onclick="KanaApp.convert(true)">Enter</button>
 				</div>
 
 				<hr>
 				<h4>Settings</h4>
 				<div>
-					<span><input type="checkbox" id="setting-katakana-output" onchange="convert(false)"> Output as Katakana</span>
+					<span><input type="checkbox" id="setting-katakana-output" onchange="KanaApp.convert(false)"> Output as Katakana</span>
 				</div>
 			</div>
 	</main>
