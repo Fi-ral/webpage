@@ -2,7 +2,7 @@ namespace Converter {
     export function fmtDistance(meters: number): string {
         const abs = Math.abs(meters);
         if (abs >= 149_597_870_700)
-            return `${(meters / 149_597_870_700).toFixed(1)} AI`;
+            return `${(meters / 149_597_870_700).toFixed(1)} AU`;
         if (abs >= 299_792_458)
             return `${(meters / 299_792_458).toFixed(2)} ls`;
         if (abs >= 1e8)

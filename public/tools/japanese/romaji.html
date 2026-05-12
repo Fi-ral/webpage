@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 	<link href="/styles/style.css" rel="stylesheet">
-	<script src="/scripts/base.js"></script>
+	<script src="/scripts/base.js" defer></script>
 	<script src="/scripts/kana.js"></script>
 </head>
 <body onload="main()">
@@ -28,7 +28,7 @@
 				<hr>
 				<h4>Input</h4>
 				<div class="romaji-input">
-					<input type="text" id="romaji-input" oninput="KanaApp.convert(false)" onchange="convert(true)">
+					<input type="text" id="romaji-input" oninput="KanaApp.convert(false)" onchange="KanaApp.convert(true)">
 					<button onclick="KanaApp.convert(true)">Enter</button>
 				</div>
 
