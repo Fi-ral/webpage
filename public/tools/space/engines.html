@@ -8,6 +8,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 	<link href="/styles/style.css" rel="stylesheet">
+	<script src="/scripts/engine.js"></script>
+	<script src="/scripts/converter.js"></script>
 	<script src="/scripts/base.js" defer></script>
 	<script src="https://gusbus.space/smallweb-subway.js/scifi.js" defer></script>
 </head>
@@ -18,7 +20,86 @@
         
 		<article>
 			<h1>Engine Calculator</h1>
-			<p><i>This section is under construction!</i></p>
+			<h4>Input</h4>
+			
+			<div onchange="EngineApp.main()">
+				<div class="generic-calculator-element">
+					<span>Thrust<span class="required-marker">*</span></span>
+					<input id="calc-input-thrust-value" type="number"></input>
+					<select id="calc-input-thrust-unit">
+						<option value="0.001">mN</option>
+						<option value="1" selected>N</option>
+						<option value="1000">kN</option>
+						<option value="1000000">MN</option>
+						<option value="1000000000">GN</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Power Output<span class="required-marker">*</span></span>
+					<input id="calc-input-power-value" type="number"></input>
+					<select id="calc-input-power-unit">
+						<option value="0.001">mW</option>
+						<option value="1" selected>W</option>
+						<option value="1000">kW</option>
+						<option value="1000000">MW</option>
+						<option value="1000000000">GW</option>
+						<option value="1000000000000">TW</option>
+						<option value="1000000000000000">PW</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Exhaust Velocity<span class="required-marker">*</span></span>
+					<input id="calc-input-exhaust-velocity-value" type="number"></input>
+					<select id="calc-input-exhaust-velocity-unit">
+						<option value="1">m/s</option>
+						<option value="1000">km/s</option>
+						<option value="299792458">c</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Specific Impulse<span class="required-marker">*</span></span>
+					<input id="calc-input-specific-impulse-value" type="number"></input>
+					<select id="calc-input-specific-impulse-unit">
+						<option value="1">s</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Massflow Rate<span class="required-marker">*</span></span>
+					<input id="calc-input-massflow-rate-value" type="number"></input>
+					<select id="calc-input-massflow-rate-unit">
+						<option value="0.001">g/s</option>
+						<option value="1" selected>kg/s</option>
+						<option value="1000">t/s</option>
+					</select>
+				</div>
+			</div>
+			
+			<span id="status-report"></span>
+			<hr>
+			
+			<div>
+				<h4>Result</h4>
+				<div class="generic-calculator-element">
+					<span>Thrust</span>
+					<span id="calc-output-thrust"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Power Output</span>
+					<span id="calc-output-power"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Exhaust Velocity</span>
+					<span id="calc-output-exhaust-velocity"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Specific Impulse</span>
+					<span id="calc-output-specific-impulse"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Massflow Rate</span>
+					<span id="calc-output-massflow-rate"></span>
+				</div>
+			</div>
 		</article>
 	</main>
 </body>

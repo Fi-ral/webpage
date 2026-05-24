@@ -45,12 +45,29 @@ namespace Converter {
     }
 
     export function fmtAcceleration(ms2: number): string {
-        return `${ms2.toFixed(3)} m/s^2 (${(ms2 / 9.81).toFixed(3)} G)`;
+        const abs = Math.abs(ms2);
+        
+        if (abs >= 1)
+            return `${ms2.toFixed(3)} m/s^2 (${(ms2 / 9.81).toFixed(3)} G)`;
+        return `${(ms2 / 1e-3).toFixed(3)} mm/s^2`;
+    }
+
+    export function fmtThrust(N: number): string {
+        const abs = Math.abs(N);
+        
+        if (abs >= 1e9)
+            return `${(N / 1e9).toFixed(3)} GN`;
+        if (abs >= 1e6)
+            return `${(N / 1e6).toFixed(3)} MN`;
+        if (abs >= 1e3)
+            return `${(N / 1e3).toFixed(3)} kN`;
+        if (abs >= 1)
+            return `${N.toFixed(3)} N`;
+        return `${(N / 1e-3).toFixed(3)} mN`;
     }
 
     export function fmtTime(secs: number): string {
         const abs = Math.abs(secs);
-
 
         if (abs >= 31557600000000)
             return `${(secs / 31557600000000).toFixed(2)} Ga`;
@@ -117,5 +134,15 @@ namespace Converter {
         if (abs >= 1e3)
             return `${(nmkg / 1e3).toFixed(3)} kN*m/kg`;
         return `${nmkg.toFixed(0)} N*m/kg`;
+    }
+
+    export function fmtMassflow(kgps: number): string {
+        const abs = Math.abs(kgps);
+
+        if (abs >= 1e3)
+            return `${(kgps / 1e3).toFixed(3)} t/s`;
+        if (abs >= 1)
+            return `${(kgps).toFixed(3)} kg/s`;
+        return `${(kgps / 1e-6).toFixed(3)} g/s`;
     }
 }
