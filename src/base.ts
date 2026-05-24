@@ -63,8 +63,6 @@ function createSideboard() {
 				<button class="show-more-button" id="button-4" onclick="toggleReveal(4)">+ Show</button>
 				<ul id="hidden-4" style="display: none;">
 					<li><span><a href="/tools/space/habitats.html">Habitat Calculator</a></span></li>
-					<li><span><a href="/tools/space/brachistochrone.html">Brachistochrone Calculator</a></span></li>
-					<li><span><a href="/tools/space/travel_time.html">Travel Time Calculator</a></span></li>
 					<li><span><a href="/tools/space/engines.html">Engine Calculator</a></span></li>
 					<li><span><a href="/tools/space/radiators.html">Radiator Calculator</a></span></li>
 				</ul>

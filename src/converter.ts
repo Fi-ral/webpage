@@ -50,6 +50,12 @@ namespace Converter {
 
     export function fmtTime(secs: number): string {
         const abs = Math.abs(secs);
+
+
+        if (abs >= 31557600000000)
+            return `${(secs / 31557600000000).toFixed(2)} Ga`;
+        if (abs >= 31557600)
+            return `${(secs / 31557600).toFixed(2)} yr`;
         if (abs >= 86400)
             return `${(secs / 86400).toFixed(3)} days`;
         if (abs >= 3600)

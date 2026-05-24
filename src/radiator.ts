@@ -94,8 +94,10 @@ namespace RadiatorApp {
         const status = document.getElementById('status-report');
         if (!status)
             return;
-        else if (inputCount <= 1)
+        else if (inputCount <= 1) {
+            clearAnswer();
             return;
+        }
         else if (inputCount !== 2) {
             status.innerHTML = "You cannot specify this combination: exactly two of the marked parameters must be filled.";
             status.style.color = "var(--red-color)";
