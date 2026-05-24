@@ -76,6 +76,10 @@ function createSideboard() {
 					<li><span><a href="/tools/japanese/counters.html">Counter Trainer</a></span></li>
 				</ul>
 			</div>
+			
+			<div style="padding-right: 20px">
+				<smallweb-subway-scifi></smallweb-subway-scifi>
+			</div>
 		</section>`;
 }
 

@@ -113,13 +113,13 @@ aside {
     background: #fefdfa;
     flex-shrink: 0;
     height: auto;
-    width: 250px;
+    width: 300px;
     z-index: 1;
     top: 0;
     left: 0;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding: 20px;
+    padding: 20px 20px 20px 0px;
     border-right: 1px solid #333;
     scrollbar-width: none;
 }
@@ -148,7 +148,7 @@ section#sideboard {
     background: var(--bk-color);
     z-index: 100;
     flex-shrink: 0;
-    width: 250px;
+    width: 300px;
     height: 100vh;
     position: sticky;
     top: 0;
@@ -223,6 +223,9 @@ span#counter-word-number {
 .generic-calculator-element > select {
 	text-align: right;
 }
+.generice-calculator-element-wide {
+    grid-template-columns: 160px 500px;
+}
 
 .required-marker {
 	color: var(--red-color);
@@ -242,6 +245,7 @@ span#counter-word-number {
         transform: translateX(-100%);
         box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
         border-right: 1px solid #333;
+        padding-top: 40px;
     }
 
     section#sideboard.open {

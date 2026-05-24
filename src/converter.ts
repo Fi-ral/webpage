@@ -21,8 +21,13 @@ namespace Converter {
         return `${sqMeters.toFixed(1)} m^2`;
     }
 
-    export function fmtGravity(ms2: number): string {
-        return `${ms2.toFixed(3)} m/s^2 (${(ms2 / 9.81).toFixed(3)} G)`;
+    export function fmtVolume(cubMeters: number): string {
+        const abs = Math.abs(cubMeters);
+        if (abs >= 1e9)
+            return `${(cubMeters / 1e9).toFixed(3)} km^3`;
+        if (abs >= 1e3)
+            return `${(cubMeters / 1e3).toFixed(3)} m³`;
+        return `${cubMeters.toFixed(1)} m³`;
     }
 
     export function fmtAngularVelocity(rads: number): string {
@@ -39,7 +44,11 @@ namespace Converter {
         return `${ms.toFixed(2)} m/s`;
     }
 
-    export function fmtPeriod(secs: number): string {
+    export function fmtAcceleration(ms2: number): string {
+        return `${ms2.toFixed(3)} m/s^2 (${(ms2 / 9.81).toFixed(3)} G)`;
+    }
+
+    export function fmtTime(secs: number): string {
         const abs = Math.abs(secs);
         if (abs >= 86400)
             return `${(secs / 86400).toFixed(3)} days`;
@@ -48,6 +57,51 @@ namespace Converter {
         if (abs >= 60)
             return `${(secs / 60).toFixed(3)} min`;
         return `${secs.toFixed(2)} s`;
+    }
+
+    export function fmtPower(watts: number): string {
+        const abs = Math.abs(watts);
+        if (abs >= 1e16)
+            return `${watts.toExponential()}, approx. K${((Math.log10(abs) - 6) / 10).toFixed(1)}`;
+        if (abs >= 1e15)
+            return `${(watts / 1e15).toFixed(3)} PW`;
+        if (abs >= 1e12)
+            return `${(watts / 1e12).toFixed(3)} TW`;
+        if (abs >= 1e9)
+            return `${(watts / 1e9).toFixed(3)} GW`;
+        if (abs >= 1e6)
+            return `${(watts / 1e6).toFixed(3)} MW`;
+        if (abs >= 1e3)
+            return `${(watts / 1e3).toFixed(3)} kW`;
+        return `${watts.toFixed(2)} W`;
+    }
+
+    export function fmtTemperature(kelvin: number): string {
+        const abs = Math.abs(kelvin);
+        
+        if (abs >= 1e9)
+            return `${(abs * 8.617e-5 / 1e6).toFixed(3)} MeV`;
+        if (abs >= 1e6)
+            return `${(abs * 8.617e-5 / 1e3).toFixed(3)} keV`;
+        
+        const celsius = kelvin - 273.15;
+        return `${kelvin.toFixed(1)} K (${celsius.toFixed(1)} °C)`;
+    }
+
+    export function fmtFlux(Wpm2: number): string {
+        const abs = Math.abs(Wpm2);
+
+        if (abs >= 1e9)
+            return `${(Wpm2 / 1e9).toFixed(3)} GW/m^3`;
+        if (abs >= 1e6)
+            return `${(Wpm2 / 1e6).toFixed(3)} MW/m^3`;
+        if (abs >= 1e3)
+            return `${(Wpm2 / 1e3).toFixed(3)} kW/m^3`;
+        if (abs >= 1)
+            return `${(Wpm2).toFixed(3)} W/m^3`;
+        if (abs >= 1e-3)
+            return `${(Wpm2 / 1e-3).toFixed(3)} mW/m^3`;
+        return `${(Wpm2 / 1e-6).toFixed(3)} uW/m^2`;
     }
 
     export function fmtSpecificStrength(nmkg: number): string {

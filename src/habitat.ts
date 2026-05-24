@@ -77,16 +77,16 @@ namespace HabitatApp {
         const status = document.getElementById('status-report');
         if (!status)
             return;
-        if (inputCount <= 1)
+        else if (inputCount <= 1)
             return;
-        if (inputCount !== 2) {
+        else if (inputCount !== 2) {
             status.innerHTML = "You cannot specify this combination: exactly two of the marked parameters must be filled.";
             status.style.color = "var(--red-color)";
             status.style.fontWeight = "bold";
             clearAnswer();
             return;
         }
-        if (!isNaN(T) && !isNaN(omega)) {
+        else if (!isNaN(T) && !isNaN(omega)) {
             status.innerHTML = "You cannot specify this combination: either the rotational period or angular velocity must be empty.";
             status.style.color = "var(--red-color)";
             status.style.fontWeight = "bold";
@@ -123,10 +123,10 @@ namespace HabitatApp {
         
         document.getElementById('calc-output-radius')!.innerText              = Converter.fmtDistance(r);
         document.getElementById('calc-output-width')!.innerText               = Converter.fmtDistance(w);
-        document.getElementById('calc-output-surface-gravity')!.innerText     = Converter.fmtGravity(g);
+        document.getElementById('calc-output-surface-gravity')!.innerText     = Converter.fmtAcceleration(g);
         document.getElementById('calc-output-angular-velocity')!.innerText    = Converter.fmtAngularVelocity(omega);
         document.getElementById('calc-output-tangential-velocity')!.innerText = Converter.fmtVelocity(v);
-        document.getElementById('calc-output-rotational-period')!.innerText   = Converter.fmtPeriod(T);
+        document.getElementById('calc-output-rotational-period')!.innerText   = Converter.fmtTime(T);
         document.getElementById('calc-output-surface-area')!.innerText        = Converter.fmtArea(surfaceArea);
         document.getElementById('calc-output-specific-strength')!.innerText   = Converter.fmtSpecificStrength(requiredSpecificStrength);
         document.getElementById('calc-output-required-material')!.innerText   = minimumMaterial;
