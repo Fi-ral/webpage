@@ -8,7 +8,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 	<link href="/styles/style.css" rel="stylesheet">
+	<script src="/scripts/radiator.js"></script>
+	<script src="/scripts/converter.js"></script>
 	<script src="/scripts/base.js" defer></script>
+	<script src="https://gusbus.space/smallweb-subway.js/scifi.js" defer></script>
 </head>
 <body onload="main()">
 	<main>
@@ -17,7 +20,74 @@
         
 		<article>
 			<h1>Radiator Calculator</h1>
-			<p>To do</p>
+			<h4>Input</h4>
+			
+			<div onchange="RadiatorApp.main()">
+				<div class="generic-calculator-element">
+					<span>Power Output<span class="required-marker">*</span></span>
+					<input id="calc-input-power-value" type="number"></input>
+					<select id="calc-input-power-unit">
+						<option value="0.001">mW</option>
+						<option value="1" selected>W</option>
+						<option value="1000">kW</option>
+						<option value="1000000">MW</option>
+						<option value="1000000000">GW</option>
+						<option value="1000000000000">TW</option>
+						<option value="1000000000000000">PW</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Surface Area<span class="required-marker">*</span></span>
+					<input id="calc-input-surface-area-value" type="number"></input>
+					<select id="calc-input-surface-area-unit">
+						<option value="1">m^2</option>
+						<option value="10.7639">sqft</option>
+						<option value="4046.86">a</option>
+						<option value="10000">ha</option>
+						<option value="1000000">km^2</option>
+						<option value="2590000">sqmi</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Temperature<span class="required-marker">*</span></span>
+					<input id="calc-input-temperature-value" type="number"></input>
+					<select id="calc-input-temperature-unit">
+						<option value="1">K</option>
+						<option value="°C">°C</option>
+						<option value="°F">°F</option>
+						<option value="0.55555">°R</option>
+						<option value="11604.5">eV</option>
+						<option value="11604500">keV</option>
+					</select>
+				</div>
+			</div>
+			
+			<span id="status-report"></span>
+			<hr>
+			
+			<div>
+				<h4>Result</h4>
+				<div class="generic-calculator-element">
+					<span>Power Output</span>
+					<span id="calc-output-power"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Surface Area</span>
+					<span id="calc-output-surface-area"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Flux</span>
+					<span id="calc-output-flux"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Temperature</span>
+					<span id="calc-output-temperature"></span>
+				</div>
+				<div class="generic-calculator-element generice-calculator-element-wide">
+					<span title="Kinds of radiators that could be used. Considers flux and operating temperature." class="further-info">Radiator Type</span>
+					<span id="calc-output-required-type"></span>
+				</div>
+			</div>
 		</article>
 	</main>
 </body>
