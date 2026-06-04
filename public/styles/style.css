@@ -231,6 +231,23 @@ span#counter-word-number {
 	color: var(--red-color);
 }
 
+.split-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.left-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 1549px) {
     aside {
         visibility: collapse;
