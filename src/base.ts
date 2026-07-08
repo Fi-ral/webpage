@@ -65,6 +65,7 @@ function createSideboard() {
 					<li><span><a href="/tools/space/habitats.html">Habitat Calculator</a></span></li>
 					<li><span><a href="/tools/space/engines.html">Engine Calculator</a></span></li>
 					<li><span><a href="/tools/space/radiators.html">Radiator Calculator</a></span></li>
+					<li><span><a href="/tools/space/system_generator.html">System Generator</a></span></li>
 				</ul>
 
 				<h4>Japanese</h4>
@@ -75,9 +76,9 @@ function createSideboard() {
 				</ul>
 			</div>
 			
-			<div style="padding-right: 20px">
+			<!--<div style="padding-right: 20px">
 				<smallweb-subway-scifi></smallweb-subway-scifi>
-			</div>
+			</div>-->
 		</section>`;
 }
 

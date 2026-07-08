@@ -1,4 +1,10 @@
 namespace Converter {
+    const CeresMass = 9.39e20;
+    const LunarMass = 7.346e+22;
+    const EarthMass = 5.972e+24;
+    const JupiterMass = 1.898e+27;
+    const SolarMass = 1.9885e+30;
+
     export function fmtDistance(meters: number): string {
         const abs = Math.abs(meters);
         if (abs >= 149_597_870_700)
@@ -144,5 +150,32 @@ namespace Converter {
         if (abs >= 1)
             return `${(kgps).toFixed(3)} kg/s`;
         return `${(kgps / 1e-6).toFixed(3)} g/s`;
+    }
+
+    export function fmtMass(kg: number) {
+        let abs = Math.abs(kg);
+        
+        if (abs >= SolarMass * 0.1)
+            return `${(kg / SolarMass).toFixed(2)} Solar masses`
+        if (abs >= JupiterMass * 0.5)
+            return `${(kg / JupiterMass).toFixed(2)} Jupiter masses`
+        if (abs >= EarthMass * 0.1)
+            return `${(kg / EarthMass).toFixed(2)} Earth masses`
+        if (abs >= LunarMass * 0.1)
+            return `${(kg / LunarMass).toFixed(2)} Lunar masses`
+        if (abs >= CeresMass * 0.1)
+            return `${(kg / CeresMass).toFixed(2)} Ceres masses`
+        return `${kg.toExponential(3).replace(/e\+?/, ' x 10^')} kg`
+    }
+    export function fmtPressure(Pa: number) {
+        const abs = Math.abs(Pa);
+        
+        if (abs >= 1e8)
+            return `${(Pa/1e8).toFixed(1)} kbar`
+        if (abs >= 1e5)
+            return `${(Pa/1e5).toFixed(1)} bar`
+        if (abs >= 10)
+            return `${(Pa/1e2).toFixed(1)} mbar`
+        return `${(Pa * 10).toFixed(0)} ubar`
     }
 }

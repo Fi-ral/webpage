@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiiral - System Generator</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+	<link href="/styles/style.css" rel="stylesheet">
+	<script src="/scripts/system_generator.js"></script>
+	<script src="/scripts/converter.js"></script>
+	<script src="/scripts/base.js" defer></script>
+	<script src="https://gusbus.space/smallweb-subway.js/scifi.js" defer></script>
+	<style>
+		details {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			max-width: max-content; 
+		}
+		details p {
+			margin: 2px 0 4px 16px;
+			font-size: 12px;
+		}
+		details > summary {
+			list-style: none;
+		}
+		details > summary::-webkit-details-marker {
+			display: none;
+		}
+	</style>
+</head>
+<body onload="main()">
+<main id="main-content">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+	<aside id="sideboard-container"></aside>
+		
+    <article>
+		<h1>Solar System Generator</h1>
+		<div>
+		<h4>Input</h4>
+			<div class="generic-calculator-element">
+				<span>Star Mass<span class="required-marker">*</span></span>
+				<input id="calc-input-star-mass-value" type="number">
+				<select id="calc-input-star-mass-unit">
+					<option value="1">kg</option>
+					<option selected value="1.9885e30">M☉</option>
+				</select>
+			</div>
+			<div class="generic-calculator-element">
+				<span>Star Luminosity<span class="required-marker">*</span></span>
+				<input id="calc-input-star-luminosity-value" type="number">
+				<select id="calc-input-star-luminosity-unit">
+					<option value="1">W</option>
+					<option value="3.828e23">mL☉</option>
+					<option selected value="3.828e26">L☉</option>
+					<option value="3.828e29">kL☉</option>
+				</select>
+			</div>
+			<div class="generic-calculator-element">
+				<span>Innermost Planet Orbit</span>
+				<input id="calc-input-innermost-planet-value" type="number">
+				<select id="calc-input-innermost-planet-unit">
+					<option value="1">m</option>
+					<option value="1000">km</option>
+					<option value="1609">mi</option>
+					<option value="299792458">ls</option>
+					<option value="149597870700">AU</option>
+				</select>
+			</div>
+			<br>
+			
+			<div class="generic-calculator-element">
+				<span title="This is the maximum amount of planets the generator will try to spawn. Some may generate as asteroid belts or be left out entirely if they would be too far away from the host star or would have been swolled by it during the Giant phase." class="further-info">Planet Attempts<span class="required-marker">*</span></span>
+				<input id="calc-input-planet-attempts-value" type="number" value="8">
+			</div>
+			<div class="generic-calculator-element">
+				<span title="This is the type of star for the host star. Main Sequence stars are also known as 'dwarfs'." class="further-info">Star Luminosity Class<span class="required-marker">*</span></span>
+				<select id="calc-input-star-class-value">
+					<option value="subdwarf">Subdwarf / VI</option>
+					<option selected value="main-sequence star">Main Sequence / V</option>
+					<option value="subgiant">Subgiant / IV</option>
+					<option value="giant">Giant / III</option>
+				</select>
+			</div>
+			<br>
+			
+			<div>
+				<details>
+					<summary><span title="You can optionally enter parameters which any planet must fulfill to be picked. Click to show." class="further-info">Enter Search Parameters</span></summary>
+					<div class="generic-calculator-element">
+						<span title="This disables the 1000 system search limit. Warning: This may crash your browser on impossible or very specific inputs. Use at your own risk.">Disable search limit</span></span>
+						<input id="calc-input-search-param-infinite-search" type="checkbox">
+					</div>
+					<div class="generic-calculator-element">
+						<span>Maximum Deviation<span class="required-marker">*</span></span></span>
+						<input id="calc-input-search-param-error-value" type="number" value="1">
+						<select id="calc-input-search-param-error-unit">
+							<option value="1">-</option>
+							<option value="0.01" selected>%</option>
+						</select>
+					</div>
+					<div class="generic-calculator-element">
+						<span>Search for Mass</span>
+						<input id="calc-input-search-param-mass-value" type="number" placeholder="any">
+						<select id="calc-input-search-param-mass-unit">
+							<option value="1">kg</option>
+							<option value="1000">t</option>
+						</select>
+					</div>
+					<div class="generic-calculator-element">
+						<span>Search for Radius</span>
+						<input id="calc-input-search-param-radius-value" type="number" placeholder="any">
+						<select id="calc-input-search-param-radius-unit">
+							<option value="1">m</option>
+							<option value="1000">km</option>
+							<option value="1609">mi</option>
+						</select>
+					</div>
+					<div class="generic-calculator-element">
+						<span>Search for Temperature</span>
+						<input id="calc-input-search-param-temperature-value" type="number" placeholder="any">
+						<select id="calc-input-search-param-temperature-unit">
+							<option value="1">K</option>
+						</select>
+					</div>
+					<div class="generic-calculator-element">
+						<span>Search for Pressure</span>
+						<input id="calc-input-search-param-pressure-value" type="number" placeholder="any">
+						<select id="calc-input-search-param-pressure-unit">
+							<option value="1">Pa</option>
+							<option value="0.1">ubar</option>
+							<option value="100">mbar</option>
+							<option value="100000">bar</option>
+							<option value="101325">atm</option>
+						</select>
+					</div>
+				</details>
+			</div>
+			<br>
+			 
+			 <div>
+				<button onclick="SystemGeneratorApp.search()">Get a random new system</button><br>
+			 </div>
+		</div>
+		
+		<hr>
+		<div>
+			<h4>Result</h4>
+			<p id="result" style="white-space: pre-wrap;"></p>
+		</div>
+		<footer></footer>
+    </article>
+  </main>
+</body>
+</html>

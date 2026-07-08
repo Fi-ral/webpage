@@ -68,7 +68,7 @@ ul {
 	margin: 0px;
 }
 section {
-	width: 1200px;
+	width: 1000px;
 	height: 100vh;
 }
 footer {
@@ -100,13 +100,13 @@ article {
     background: #fefdfa;
     flex-shrink: 0;
     padding: 22px 40px 40px 40px;
-    width: 1200px;
+    width: 1000px;
     height: 100vh;
     overflow-y: scroll;
     scrollbar-width: thin;
 }
 article hr {
-    width: 1200px;
+    width: 1000px;
 }
 
 aside {
@@ -233,7 +233,7 @@ span#counter-word-number {
 
 .split-container {
     display: flex;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     border-radius: 8px;
 }
