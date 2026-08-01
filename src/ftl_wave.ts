@@ -52,13 +52,15 @@ namespace FTLWaveApp {
         let E_w = P * t;
         let E_gf = conversionFactor * E_w;
         let waveStrain = (2 * Converter.GraviationalConstant * I_dt2) / (Converter.SpeedOfLight ** 4);
-        let waveWidth = l / Converter.SpeedOfLight;
+        let waveOnsetWidth = l / Converter.SpeedOfLight;
+        let waveWidth = Converter.SpeedOfLight / f;
 
         document.getElementById('calc-output-time')!.innerText                  = Converter.fmtTime(t);
         document.getElementById('calc-output-frequency')!.innerText             = Converter.fmtFrequency(f)
         document.getElementById('calc-output-quadrupole-moment')!.innerText     = I.toExponential(3) + " kg*m^2";
         document.getElementById('calc-output-wave-strain')!.innerText           = waveStrain.toExponential(3) + " 1/m";
         document.getElementById('calc-output-wave-width')!.innerText            = Converter.fmtDistance(waveWidth);
+        document.getElementById('calc-output-wave-onset-width')!.innerText      = Converter.fmtDistance(waveOnsetWidth);
         document.getElementById('calc-output-peak-power')!.innerText            = Converter.fmtPower(P);
         document.getElementById('calc-output-displaced-mass-energy')!.innerText = Converter.fmtEnergy(E_m);
         document.getElementById('calc-output-wave-energy')!.innerText           = Converter.fmtEnergy(E_w);
