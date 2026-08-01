@@ -7,7 +7,6 @@ interface RadiatorType {
 }
 
 namespace RadiatorApp {
-    const STEFAN_BOLTZMANN = 5.670374419e-8; // W m^-2 K^-4
     const TYPES: RadiatorType[] = [
         {
             name: "Heat Pipe Radiator (Ammonia/Water)",
@@ -69,13 +68,13 @@ namespace RadiatorApp {
     export function main() {
         function trySolve(): void {
             if (isNaN(P) && !isNaN(A) && !isNaN(T)) {
-                P = STEFAN_BOLTZMANN * A * Math.pow(T, 4);
+                P = Converter.StefanBoltzmann * A * Math.pow(T, 4);
             } 
             else if (isNaN(A) && !isNaN(P) && !isNaN(T)) {
-                A = P / (STEFAN_BOLTZMANN * Math.pow(T, 4));
+                A = P / (Converter.StefanBoltzmann * Math.pow(T, 4));
             } 
             else if (isNaN(T) && !isNaN(P) && !isNaN(A)) {
-                T = Math.pow(P / (STEFAN_BOLTZMANN * A), 0.25);
+                T = Math.pow(P / (Converter.StefanBoltzmann * A), 0.25);
             }
         }
         

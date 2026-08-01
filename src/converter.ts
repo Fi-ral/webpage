@@ -5,6 +5,13 @@ namespace Converter {
     const JupiterMass = 1.898e+27;
     const SolarMass = 1.9885e+30;
 
+    export const SpeedOfLight = 299792458;
+    export const GraviationalConstant = 6.6744e-11;
+    export const BoltzmannConstant = 1.380549e-23;
+    export const StefanBoltzmann = 5.67e-8;
+    export const IdealGasConstant = 8.314;
+    export const VacuumPermeability = 1.256637061e-6;
+
     export function fmtDistance(meters: number): string {
         const abs = Math.abs(meters);
         if (abs >= 149_597_870_700)
@@ -15,7 +22,15 @@ namespace Converter {
             return `${(meters / 1e3).toFixed(0)} km`;
         if (abs >= 1e3)
             return `${(meters / 1e3).toFixed(3)} km`;
-        return `${meters.toFixed(1)} m`;
+        if (abs >= 1)
+            return `${meters.toFixed(1)} m`;
+        if (abs >= 1e-3)
+            return `${(meters * 1e3).toFixed(3)} mm`;
+        if (abs >= 1e-6)
+            return `${(meters * 1e6).toFixed(3)} um`;
+        if (abs >= 1e-9)
+            return `${(meters * 1e9).toFixed(3)} nm`;
+        return `${(meters * 1e12).toFixed(3)} pm`;
     }
 
     export function fmtArea(sqMeters: number): string {
@@ -85,13 +100,42 @@ namespace Converter {
             return `${(secs / 3600).toFixed(3)} h`;
         if (abs >= 60)
             return `${(secs / 60).toFixed(3)} min`;
-        return `${secs.toFixed(2)} s`;
+        if (abs >= 1)
+            return `${secs.toFixed(2)} s`;
+        if (abs >= 1e-3)
+            return `${(secs * 1e3).toFixed(3)} ms`;
+        if (abs >= 1e-6)
+            return `${(secs * 1e6).toFixed(3)} us`;
+        if (abs >= 1e-9)
+            return `${(secs * 1e9).toFixed(3)} ns`;
+        if (abs >= 1e-12)
+            return `${(secs * 1e12).toFixed(3)} ps`;
+        if (abs >= 1e-15)
+            return `${(secs * 1e15).toFixed(3)} fs`;
+        return `${(secs * 1e18).toFixed(3)} as`;
+    }
+    export function fmtFrequency(hertz: number): string {
+        const abs = Math.abs(hertz);
+
+        if (abs >= 1e16)
+            return `${hertz.toExponential(3)} Hz`;
+        if (abs >= 1e15)
+            return `${(hertz / 1e15).toFixed(3)} PHz`;
+        if (abs >= 1e12)
+            return `${(hertz / 1e12).toFixed(3)} THz`;
+        if (abs >= 1e9)
+            return `${(hertz / 1e9).toFixed(3)} GHz`;
+        if (abs >= 1e6)
+            return `${(hertz / 1e6).toFixed(3)} MHz`;
+        if (abs >= 1e3)
+            return `${(hertz / 1e3).toFixed(3)} kHz`;
+        return `${hertz.toFixed(2)} W`;
     }
 
     export function fmtPower(watts: number): string {
         const abs = Math.abs(watts);
         if (abs >= 1e16)
-            return `${watts.toExponential()}, approx. K${((Math.log10(abs) - 6) / 10).toFixed(1)}`;
+            return `${watts.toExponential(3)} W, approx. K${((Math.log10(abs) - 6) / 10).toFixed(1)}`;
         if (abs >= 1e15)
             return `${(watts / 1e15).toFixed(3)} PW`;
         if (abs >= 1e12)
@@ -103,6 +147,29 @@ namespace Converter {
         if (abs >= 1e3)
             return `${(watts / 1e3).toFixed(3)} kW`;
         return `${watts.toFixed(2)} W`;
+    }
+
+    export function fmtEnergy(watts: number): string {
+        const abs = Math.abs(watts);
+        if (abs >= 1e16)
+            return `${watts.toExponential(3)} J`;
+        if (abs >= 1e15)
+            return `${(watts / 1e15).toFixed(3)} PJ`;
+        if (abs >= 1e12)
+            return `${(watts / 1e12).toFixed(3)} TJ`;
+        if (abs >= 1e9)
+            return `${(watts / 1e9).toFixed(3)} GJ`;
+        if (abs >= 1e6)
+            return `${(watts / 1e6).toFixed(3)} MJ`;
+        if (abs >= 1e3)
+            return `${(watts / 1e3).toFixed(3)} kJ`;
+        if (abs >= 1)
+            return `${watts.toFixed(3)} J`;
+        if (abs >= 1e-3)
+            return `${(watts * 1e3).toFixed(3)} mJ`;
+        if (abs >= 1e-6)
+            return `${(watts * 1e6).toFixed(3)} uJ`;
+        return `${(watts * 1e9).toFixed(2)} nJ`;
     }
 
     export function fmtTemperature(kelvin: number): string {

@@ -10,11 +10,6 @@ namespace SystemGeneratorApp {
     const AtomicMass = 1.6605e-27;
     const AtmosphericPressure = 101325;
 
-    const StefanBoltzmann = 5.67e-8;
-    const GraviationalConstant = 6.6744e-11;
-    const IdealGasConstant = 8.314;
-    const BoltzmannConstant = 1.380549e-23;
-
     enum LuminosityClass {
         SUBDWARF = "subdwarf",
         DWARF = "main-sequence star",
@@ -487,7 +482,7 @@ namespace SystemGeneratorApp {
             
             const data = GasData[particle];
             const lnP_ratio = Math.log(pressure / AtmosphericPressure);
-            const requiredTemp = 1 / ((1 / data.Tb) - (IdealGasConstant / data.Hvap) * lnP_ratio);
+            const requiredTemp = 1 / ((1 / data.Tb) - (Converter.IdealGasConstant / data.Hvap) * lnP_ratio);
 
             return temperature > requiredTemp;
         }
@@ -500,7 +495,7 @@ namespace SystemGeneratorApp {
         }
         static getMeanVelocity(temperature: number, gas: GasTypes) {
             let particleMass = Atmosphere.getMolecularMass(gas);
-            return ((8 * IdealGasConstant * temperature) / (Math.PI * particleMass/1000)) ** (1/2)
+            return ((8 * Converter.IdealGasConstant * temperature) / (Math.PI * particleMass/1000)) ** (1/2)
         }
         static canRegenerateOxygen(temperature: number, pressure: number) {
             return temperature > 250 && temperature < 330 && pressure > 0.1 * AtmosphericPressure && pressure < 4 * AtmosphericPressure;
@@ -580,7 +575,7 @@ namespace SystemGeneratorApp {
                     composition.set(gas,  composition.get(gas)! / totalWeight);
                 };
                 
-                const scaleHeight = BoltzmannConstant * temperature / (Atmosphere.getAverageParticleMass(composition) * surfaceGravity);
+                const scaleHeight = Converter.BoltzmannConstant * temperature / (Atmosphere.getAverageParticleMass(composition) * surfaceGravity);
                 const karmanLine = -scaleHeight * Math.log(1/groundPressure);
                 
                 console.assert(scaleHeight !== 0 && Number.isFinite(scaleHeight))
@@ -610,7 +605,6 @@ namespace SystemGeneratorApp {
                 +`  - Composition: ${notableGases}`;
         }
     }
-
 
 
     class Body {
@@ -739,7 +733,7 @@ namespace SystemGeneratorApp {
             return Star.getStarBaseRadius(this.mass);
         }
         getStarTemperature() {
-            const denominator = 4 * Math.PI * (this.radius ** 2) * StefanBoltzmann;
+            const denominator = 4 * Math.PI * (this.radius ** 2) * Converter.StefanBoltzmann;
             const temperature = (this.luminosity / denominator) ** (1/4);
 
             return temperature;
@@ -793,7 +787,7 @@ namespace SystemGeneratorApp {
         }
         
         static getPlanetTemperature(distance: number, albedo: number, emissivity: number, sun: Star) {
-            return ((sun.luminosity * (1 - albedo)) / (16 * Math.PI * StefanBoltzmann * emissivity * distance ** 2)) ** (1/4)
+            return ((sun.luminosity * (1 - albedo)) / (16 * Math.PI * Converter.StefanBoltzmann * emissivity * distance ** 2)) ** (1/4)
         }
         static getPlanetMass(star: Star, semiMajorAxis: number) {
             function getPlanetMassFactor(star: Star, semiMajorAxis: number) {
@@ -858,10 +852,10 @@ namespace SystemGeneratorApp {
         }
 
         getSurfaceGravity() {
-            return GraviationalConstant * this.mass / (this.radius**2);
+            return Converter.GraviationalConstant * this.mass / (this.radius**2);
         }
         getEscapeVelocity() {
-            return (2 * GraviationalConstant * this.mass / this.radius) ** (1/2)
+            return (2 * Converter.GraviationalConstant * this.mass / this.radius) ** (1/2)
         }
 
         toString() {
@@ -910,6 +904,7 @@ namespace SystemGeneratorApp {
     }
 
 
+    
     function clamp(n: number, min: number, max: number) {
         return Math.min(Math.max(n, min), max)
     }

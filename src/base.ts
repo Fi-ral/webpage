@@ -65,6 +65,7 @@ function createSideboard() {
 					<li><span><a href="/tools/space/habitats.html">Habitat Calculator</a></span></li>
 					<li><span><a href="/tools/space/engines.html">Engine Calculator</a></span></li>
 					<li><span><a href="/tools/space/radiators.html">Radiator Calculator</a></span></li>
+					<li><span><a href="/tools/space/ftl_wave.html">FTL Wave Calculator</a></span></li>
 					<li><span><a href="/tools/space/system_generator.html">System Generator</a></span></li>
 				</ul>
 

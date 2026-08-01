@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiiral - FTL Wave Calculator</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+	<link href="/styles/style.css" rel="stylesheet">
+	<script src="/scripts/ftl_wave.js"></script>
+	<script src="/scripts/converter.js"></script>
+	<script src="/scripts/base.js" defer></script>
+	<script src="https://gusbus.space/smallweb-subway.js/scifi.js" defer></script>
+</head>
+<body onload="main()">
+	<main>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+		<aside id="sideboard-container"></aside>
+        
+		<article>
+			<h1>FTL Wave Calculator</h1>
+			<h4>Input</h4>
+			
+			<div onchange="FTLWaveApp.main()">
+				<div class="generic-calculator-element">
+					<span>Spacecraft Mass<span class="required-marker">*</span></span>
+					<input id="calc-input-mass-value" type="number"></input>
+					<select id="calc-input-mass-unit">
+						<option value="0.001">g</option>
+						<option value="1" selected>kg</option>
+						<option value="1000">t</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Spacecraft Length<span class="required-marker">*</span></span>
+					<input id="calc-input-length-value" type="number"></input>
+					<select id="calc-input-length-unit">
+						<option value="1">m</option>
+						<option value="1000">km</option>
+						<option value="1609.34">mi</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>FTL Speed<span class="required-marker">*</span></span>
+					<input id="calc-input-velocity-value" type="number"></input>
+					<select id="calc-input-velocity-unit">
+						<option value="1">m/s</option>
+						<option value="299792458" selected>c</option>
+						<option value="299792458000">kc</option>
+						<option value="5.38552341446e14">pc/s</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Magnetic Field Strength</span>
+					<input id="calc-input-magnetic-field-strength-value" type="number"></input>
+					<select id="calc-input-magnetic-field-strength-unit">
+						<option value="0.000001">uT</option>
+						<option value="0.001">mT</option>
+						<option value="1">T</option>
+					</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Interaction Length</span>
+					<input id="calc-input-magnetic-field-length-value" type="number"></input>
+					<select id="calc-input-magnetic-field-length-unit">
+						<option value="1">m</option>
+						<option value="1000">km</option>
+						<option value="1609.34">mi</option>
+					</select>
+				</div>
+			</div>
+			
+			<span id="status-report"></span>
+			<hr>
+			
+			<div>
+				<h4>Result</h4>
+				<div class="generic-calculator-element">
+					<span>Rematerialization Time</span>
+					<span id="calc-output-time"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Gravity Wave Frequency</span>
+					<span id="calc-output-frequency"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Quadrupole Moment</span>
+					<span id="calc-output-quadrupole-moment"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Wave Strain</span>
+					<span id="calc-output-wave-strain"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Wave Width</span>
+					<span id="calc-output-wave-width"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Peak Power</span>
+					<span id="calc-output-peak-power"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Displaced Mass Energy</span>
+					<span id="calc-output-displaced-mass-energy"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Wave Energy</span>
+					<span id="calc-output-wave-energy"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Gertsenshtein Flash</span>
+					<span id="calc-output-flash-energy"></span>
+				</div>
+			</div>
+		</article>
+	</main>
+</body>
+</html>

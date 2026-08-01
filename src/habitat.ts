@@ -124,12 +124,22 @@ namespace HabitatApp {
         }
         
         document.getElementById('calc-output-radius')!.innerText              = Converter.fmtDistance(r);
-        document.getElementById('calc-output-width')!.innerText               = Converter.fmtDistance(w);
+
+        if (!Number.isNaN(w))
+            document.getElementById('calc-output-width')!.innerText           = Converter.fmtDistance(w);
+        else
+            document.getElementById('calc-output-width')!.innerText           = "";
+
         document.getElementById('calc-output-surface-gravity')!.innerText     = Converter.fmtAcceleration(g);
         document.getElementById('calc-output-angular-velocity')!.innerText    = Converter.fmtAngularVelocity(omega);
         document.getElementById('calc-output-tangential-velocity')!.innerText = Converter.fmtVelocity(v);
         document.getElementById('calc-output-rotational-period')!.innerText   = Converter.fmtTime(T);
-        document.getElementById('calc-output-surface-area')!.innerText        = Converter.fmtArea(surfaceArea);
+
+        if (!Number.isNaN(surfaceArea))
+            document.getElementById('calc-output-surface-area')!.innerText        = Converter.fmtArea(surfaceArea);
+        else
+            document.getElementById('calc-output-surface-area')!.innerText        = "";
+
         document.getElementById('calc-output-specific-strength')!.innerText   = Converter.fmtSpecificStrength(requiredSpecificStrength);
         document.getElementById('calc-output-required-material')!.innerText   = minimumMaterial;
         document.getElementById('calc-output-recommended-material')!.innerText = recommendedMaterial;
