@@ -33,7 +33,7 @@ function createSideboard() {
 			<br>
 	
 			<div>
-			<h3>Projects</h3>
+			<h3><a href="/projects">Projects</a></h3>
 			<button class="show-more-button" id="button-1" onclick="toggleReveal(1)">+ Show</button>
 			<ul id="hidden-1" style="display: none;">
 				<li><span><a href="/projects/final_frontier.html">The Final Frontier</a></span></li>
@@ -43,7 +43,7 @@ function createSideboard() {
 			<br>
 
 			<div>
-				<h3>Articles</h3>
+				<h3><a href="/articles">Articles</a></h3>
 				<button class="show-more-button" id="button-2" onclick="toggleReveal(2)">+ Show</button>
 				<ul id="hidden-2" style="display: none;">
 					<li><span><a href="/articles/planet_classifications.html">Planet Classifications</a></span></li>
@@ -52,14 +52,14 @@ function createSideboard() {
 			<br>
 
 			<div>
-				<h3>Tools</h3>
-				<h4>General</h4>
+				<h3><a href="/tools">Tools</a></h3>
+				<h4><a href="/tools">General</a></h4>
 				<button class="show-more-button" id="button-3" onclick="toggleReveal(3)">+ Show</button>
 				<ul id="hidden-3" style="display: none;">
 					<li><span><a href="/tools/general/case_converter.html">Case Converter</a></span></li>
 				</ul>
 
-				<h4>Space</h4>
+				<h4><a href="/tools">Space</a></h4>
 				<button class="show-more-button" id="button-4" onclick="toggleReveal(4)">+ Show</button>
 				<ul id="hidden-4" style="display: none;">
 					<li><span><a href="/tools/space/habitats.html">Habitat Calculator</a></span></li>
@@ -69,7 +69,7 @@ function createSideboard() {
 					<li><span><a href="/tools/space/system_generator.html">System Generator</a></span></li>
 				</ul>
 
-				<h4>Japanese</h4>
+				<h4><a href="/tools">Japanese</a></h4>
 				<button class="show-more-button" id="button-5" onclick="toggleReveal(5)">+ Show</button>
 				<ul id="hidden-5" style="display: none;">
 					<li><span><a href="/tools/japanese/romaji.html">Wapuro Romaji Converter</a></span></li>
