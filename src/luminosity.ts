@@ -53,6 +53,7 @@ namespace LuminosityApp {
             return;
         }
         
+        clearAnswer();
         trySolve();
         
         let visibility;
