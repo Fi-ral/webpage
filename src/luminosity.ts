@@ -52,10 +52,11 @@ namespace LuminosityApp {
             clearAnswer();
             return;
         }
-        
-        status.innerHTML = "";
-        status.style.color = "";
-        status.style.fontWeight = "";
+        else {
+            status.innerHTML = "";
+            status.style.color = "";
+            status.style.fontWeight = "";
+        }
 
         trySolve();
         
