@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiiral - Luminosity Calculator</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+	<link href="/styles/style.css" rel="stylesheet">
+	<script src="/scripts/luminosity.js"></script>
+	<script src="/scripts/converter.js"></script>
+	<script src="/scripts/base.js" defer></script>
+	<script src="https://gusbus.space/smallweb-subway.js/scifi.js" defer></script>
+</head>
+<body onload="main()">
+	<main>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+		<aside id="sideboard-container"></aside>
+        
+		<article>
+			<h1>Luminosity Calculator</h1>
+			<h4>Input</h4>
+			
+			<div onchange="LuminosityApp.main()">
+				<div class="generic-calculator-element">
+					<span>Power Output<span class="required-marker">*</span></span>
+					<input id="calc-input-power-value" type="number"></input>
+					<select id="calc-input-power-unit">
+						<option value="1" selected>W</option>
+						<option value="1000">kW</option>
+						<option value="1000000">MW</option>
+						<option value="1000000000">GW</option>
+						<option value="1000000000000">TW</option>
+						<option value="1000000000000000">PW</option>
+                        <option value="3.828e23">mL☉</option>
+                        <option value="3.828e26">L☉</option>
+                        <option value="3.828e29">kL☉</option>
+                        <option value="1.1e37">Lv</option>
+    			</select>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Absolute Magnitude<span class="required-marker">*</span></span>
+					<input id="calc-input-absolute-magnitude" type="number"></input>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Apparent Magnitude<span class="required-marker">*</span></span>
+					<input id="calc-input-apparent-magnitude" type="number"></input>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Distance<span class="required-marker">*</span></span>
+					<input id="calc-input-distance-value" type="number"></input>
+					<select id="calc-input-distance-unit">
+						<option value="1">m</option>
+						<option value="1000">km</option>
+						<option value="1609.34">mi</option>
+						<option value="299792458">ls</option>
+						<option value="149597870700">AU</option>
+						<option value="9.461e+15">ly</option>
+						<option value="3.086e+16">pc</option>
+						<option value="3.086e+19">kpc</option>
+						<option value="3.086e+22">Mpc</option>
+						<option value="3.086e+25">Gpc</option>
+					</select>
+				</div>
+			</div>
+			
+			<span id="status-report"></span>
+			<hr>
+			
+			<div>
+				<h4>Result</h4>
+				<div class="generic-calculator-element">
+					<span>Power Output</span>
+					<span id="calc-output-power"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Absolute Magnitude</span>
+					<span id="calc-output-absolute-magnitude"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Apperant Magnitude</span>
+					<span id="calc-output-apperant-magnitude"></span>
+				</div>
+				<div class="generic-calculator-element">
+					<span>Distance</span>
+					<span id="calc-output-distance"></span>
+				</div>
+				<div class="generic-calculator-element generice-calculator-element-wide">
+					<span title="What you would need to see this object at the given object." class="further-info">Visibility</span>
+					<span id="calc-output-visibility"></span>
+				</div>
+			</div>
+		</article>
+	</main>
+</body>
+</html>

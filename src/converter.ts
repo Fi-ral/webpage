@@ -1,10 +1,4 @@
 namespace Converter {
-    const CeresMass = 9.39e20;
-    const LunarMass = 7.346e+22;
-    const EarthMass = 5.972e+24;
-    const JupiterMass = 1.898e+27;
-    const SolarMass = 1.9885e+30;
-
     export const SpeedOfLight = 299792458;
     export const GraviationalConstant = 6.6744e-11;
     export const BoltzmannConstant = 1.380549e-23;
@@ -12,8 +6,27 @@ namespace Converter {
     export const IdealGasConstant = 8.314;
     export const VacuumPermeability = 1.256637061e-6;
 
+    export const CeresMass = 9.39e20;
+    export const LunarMass = 7.346e+22;
+    export const EarthMass = 5.972e+24;
+    export const JupiterMass = 1.898e+27;
+    export const SolarMass = 1.9885e+30;
+
+    export const SolarLuminiosity = 3.828e26;
+    export const SolarBolometricMagnitude = 4.74;
+    export const Parsec = 3.0856775814913673e16;
+
     export function fmtDistance(meters: number): string {
         const abs = Math.abs(meters);
+
+        if (abs >= 1000000000 * Parsec)
+            return `${(meters / (1000000000 * Parsec)).toFixed(1)} Gpc`;
+        if (abs >= 1000000 * Parsec)
+            return `${(meters / (1000000 * Parsec)).toFixed(1)} Mpc`;
+        if (abs >= 1000 * Parsec)
+            return `${(meters / (1000 * Parsec)).toFixed(1)} kpc`;
+        if (abs >= Parsec)
+            return `${(meters / Parsec).toFixed(1)} pc`;
         if (abs >= 149_597_870_700)
             return `${(meters / 149_597_870_700).toFixed(1)} AU`;
         if (abs >= 299_792_458)
