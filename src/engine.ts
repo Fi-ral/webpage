@@ -60,7 +60,7 @@ namespace EngineApp {
         let dm =    parseFloat((document.getElementById('calc-input-massflow-rate-value') as HTMLInputElement).value) * 
                     parseFloat((document.getElementById('calc-input-massflow-rate-unit') as HTMLInputElement).value);
         
-        const inputCount = [F, P, v_e, I_sp, dm].filter(Boolean).length;
+        const inputCount = [F, P, v_e, I_sp, dm].filter(v => !Number.isNaN(v)).length;
         const status = document.getElementById('status-report');
         if (!status)
             return;

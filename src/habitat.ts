@@ -73,7 +73,7 @@ namespace HabitatApp {
         let v =     parseFloat((document.getElementById('calc-input-tangential-velocity-value') as HTMLInputElement).value) * 
                     parseFloat((document.getElementById('calc-input-tangential-velocity-unit') as HTMLInputElement).value);
         
-        const inputCount = [r, g, T, omega, v].filter(Boolean).length;
+        const inputCount = [r, g, T, omega, v].filter(v => !Number.isNaN(v)).length;
         const status = document.getElementById('status-report');
         if (!status)
             return;

@@ -30,7 +30,7 @@ namespace LuminosityApp {
         let d =     parseFloat((document.getElementById('calc-input-distance-value') as HTMLInputElement).value) * 
                     parseFloat((document.getElementById('calc-input-distance-unit') as HTMLInputElement).value);
         
-        const inputCount = [P, M, m].filter(Boolean).length;
+        const inputCount = [P, M, m].filter(v => !Number.isNaN(v)).length;
         const status = document.getElementById('status-report');
         if (!status)
             return;

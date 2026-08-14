@@ -23,7 +23,7 @@ namespace FTLWaveApp {
         let L =     parseFloat((document.getElementById('calc-input-magnetic-field-length-value') as HTMLInputElement).value) * 
                     parseFloat((document.getElementById('calc-input-magnetic-field-length-unit') as HTMLInputElement).value);
         
-        const inputCount = [m, l, v].filter(Boolean).length;
+        const inputCount = [m, l, v].filter(v => !Number.isNaN(v)).length;
         const status = document.getElementById('status-report');
         if (!status)
             return;

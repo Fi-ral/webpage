@@ -89,7 +89,7 @@ namespace RadiatorApp {
               * parseFloat((document.getElementById("calc-input-surface-area-unit")  as HTMLSelectElement).value);
         let T = isNaN(tempRaw) ? NaN : parseTemperature(tempRaw, tempUnit);
         
-        const inputCount = [P, A, T].filter(Boolean).length;
+        const inputCount = [P, A, T].filter(v => !Number.isNaN(v)).length;
         const status = document.getElementById('status-report');
         if (!status)
             return;
