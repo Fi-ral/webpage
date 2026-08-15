@@ -16,8 +16,9 @@ body {
 p {
 	color: var(--text-color);
 	font-size: 14px;
-	margin-top: 4px;
-	margin-bottom: 4px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+    text-align: justify;
 }
 p > span {
 	display: block;
@@ -52,13 +53,13 @@ h2 {
 h3 {
 	color: var(--text-color);
 	font-size: 20px;
-	margin-top: 8px;
+	margin-top: 16px;
 	margin-bottom: 4px;
 }
 h4 {
 	color: var(--text-color);
 	font-size: 16px;
-	margin-top: 6px;
+	margin-top: 12px;
 	margin-bottom: 4px;
 }
 li {

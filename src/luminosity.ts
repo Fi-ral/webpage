@@ -63,7 +63,8 @@ namespace LuminosityApp {
         let visibility;
         if (m <= -26.74)        visibility = "Appears brighter than the Sun."
         else if (m <= -12.74)   visibility = "Appears brighter than the Moon."
-        else if (m <= -4)       visibility = "Visible during the day."
+        else if (m <= -4)       visibility = "Visible even during the day."
+        else if (m <= -1.46)    visibility = "Appears brighter than Sirius."
         else if (m <= 4)        visibility = "Visible to the unaided eye."
         else if (m <= 6)        visibility = "Barely visible to the unaided eye."
         else if (m <= 10)       visibility = "Visible using binoculars."
