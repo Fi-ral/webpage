@@ -144,6 +144,15 @@ aside li {
 .show-more-button {
     border: none;
 }
+.anchor-copy-button {
+    margin-left: 8px;
+	font-size: 0.75em;
+	vertical-align: middle;
+	background: none;
+	border: none;
+	cursor: pointer;
+	opacity: 0.6;
+}
 
 section#sideboard {
     background: var(--bk-color);

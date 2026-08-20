@@ -85,8 +85,46 @@ function createSideboard() {
 		</section>`;
 }
 
+function addHeaderButtons(root: ParentNode = document): void {
+	const headerTags = ["h2", "h3", "h4", "h5"];
+	const selector = headerTags.join(", ");
+
+	root.querySelectorAll<HTMLElement>(selector).forEach((heading) => {
+		const id = heading.id;
+		if (!id || heading.querySelector(".anchor-copy-button")) 
+			return;
+
+		const button = document.createElement("button");
+		button.className = "anchor-copy-button";
+		button.title = "Copy link to this section";
+		button.textContent = "↗";
+
+		async function copyLink(e: PointerEvent) {
+			e.stopPropagation();
+			await navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}#${id}`);
+
+			const original = button.textContent;
+			button.textContent = "✓";
+			setTimeout(() => (button.textContent = original), 1200);
+		}
+
+		button.addEventListener(
+			"mouseenter", () => (button.style.opacity = "1")
+		);
+		button.addEventListener(
+			"mouseleave", () => (button.style.opacity = "0.6")
+		);
+		button.addEventListener("click", async (e) => {
+			copyLink(e);
+		});
+
+		heading.appendChild(button);
+	});
+}
+
 function main() {
     createSideboard();
+	addHeaderButtons()
 
     function openSidebar() {
         sidebar.classList.add('open');
