@@ -85,6 +85,30 @@ function createSideboard() {
 		</section>`;
 }
 
+function addLazyLoadingImages(): void {
+	const images = document.querySelectorAll<HTMLImageElement>('img[data-src]');
+
+	const observer = new IntersectionObserver((entries, obs) => {
+		entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			const img = entry.target as HTMLImageElement;
+			const src = img.dataset.src;
+
+			if (src) {
+				img.src = src;
+				img.removeAttribute('data-src');
+			}
+			obs.unobserve(img);
+		}
+		});
+	}, {
+		rootMargin: '50px',
+		threshold: 0.01,
+	});
+
+	images.forEach((img) => observer.observe(img));
+}
+
 function addHeaderButtons(root: ParentNode = document): void {
 	const headerTags = ["h2", "h3", "h4", "h5"];
 	const selector = headerTags.join(", ");
@@ -124,7 +148,8 @@ function addHeaderButtons(root: ParentNode = document): void {
 
 function main() {
     createSideboard();
-	addHeaderButtons()
+	addHeaderButtons();
+	addLazyLoadingImages();
 
     function openSidebar() {
         sidebar.classList.add('open');
