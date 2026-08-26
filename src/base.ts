@@ -128,7 +128,7 @@ function addHeaderButtons(root: ParentNode = document): void {
 			await navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname}#${id}`);
 
 			const original = button.textContent;
-			button.textContent = "✓";
+			button.textContent = "link copied";
 			setTimeout(() => (button.textContent = original), 1200);
 		}
 
