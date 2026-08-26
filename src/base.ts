@@ -79,9 +79,9 @@ function createSideboard() {
 				</ul>
 			</div>
 			
-			<!--<div style="padding-right: 20px">
+			<div style="padding-right: 20px">
 				<smallweb-subway-scifi></smallweb-subway-scifi>
-			</div>-->
+			</div>
 		</section>`;
 }
 
