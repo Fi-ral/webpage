@@ -80,6 +80,11 @@ footer {
 img {
     width: 100%;
 }
+br {
+    display: block;
+    content: "";
+    margin-top: 12px;
+}
 button {
 	text-align: right;
 	background: none;
