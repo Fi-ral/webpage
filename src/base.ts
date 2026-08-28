@@ -46,6 +46,7 @@ function createSideboard() {
 				<h3><a href="/articles">Articles</a></h3>
 				<button class="show-more-button" id="button-2" onclick="toggleReveal(2)">+ Show</button>
 				<ul id="hidden-2" style="display: none;">
+					<li><span><a href="/articles/sophont_scale.html">Sophont Scale</a></span></li>
 					<li><span><a href="/articles/standard_technologies.html">Standard Technologies</a></span></li>
 					<li><span><a href="/articles/planet_classifications.html">Planet Classifications</a></span></li>
 				</ul>
