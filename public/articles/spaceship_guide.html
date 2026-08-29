@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiiral - Spaceship Guide</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+	<link href="/styles/style.css" rel="stylesheet">
+	<script src="/scripts/base.js" defer></script>
+    <script src="https://gusbus.space/smallweb-subway.js/scifi.js" defer></script>
+	<script>let forceURL_scifi = "www.fiiral.org/index.html";</script>
+</head>
+<body onload="main()">
+	<main>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+		<aside id="sideboard-container"></aside>
+        
+		<article>
+			<h1>Spaceship Guide</h1>
+			<h2 id="preamble">Preamble</h2>
+            <p>This guide is specifically designed to be used in conjunction with the <a href="/articles/standard_technologies.html">Standards Technology</a> list and is not standalone. While it will not apply to every setting due to the technological differences, some concepts are still useful when designing your own vessels.</p>
+            <p>
+                <span>It will also not go much into the specifics about applying numbers to specific components, as this is something I personally find very distasteful; rather, it goes into the general decisions one might want to make to create something that looks and feels realistic rather than be realistic. Internal consistency is far more important than rigorous science to this end. </span>
+                <span>While this website <i>does</i> offer a variety of calculators that can be used to that end, they are not designed for that and are mostly intended as an estimation tool. After all, if I wanted to compare spreadsheets, I would do that at work and not when reading science fiction stories.</span>
+            </p>
+
+            <h2 id="civilian">Civilian Guide</h2>
+            <h3 id="civilian-getting-started">Getting started</h4>
+            <p><i>This section is under construction!</i></p>
+
+            <h2 id="military">Military Guide</h2>
+            <h3 id="military-getting-started">Getting started</h4>
+            <p>The most important thing when designing a vessel is determining what it is supposed to be doing in the first place and how much you can afford to spend on it. Not every ship needs to or even can do everything and the clearer your choices are here, the easier it is to come up with a good design with a clearly defined role it needs to fill. </p>
+            <p>Some important ones, in no particular order are:</p>
+			<ul>
+				<li><span>Is it supposed to fight pirates or is it supposed to fight against the Empire?</span></li>
+				<li><span>Is it supposed to be mass produced, one line of production or is it a unique design?</span></li>
+				<li><span>Are there already similar vessels in service and if so, what do they look like?</span></li>
+				<li><span>What technology is available for military use for the faction building them?</span></li>
+				<li><span>What vessels does your most likely enemy field and how do you counter them?</span></li>
+				<li><span>Are you the dominant player, in a defensive role or is the playing field more even?</span></li>
+				<li><span>How do those choices compare to the choices of whoever you are fighting?</span></li>
+			</ul>
+            
+            <h4 id="tradeoffs">Tradeoffs</h4>
+            <p>Once you have some basic ideas about the design, it is time to talk about the tradeoffs you will need to take. For any given mass and power budget, there are only so many things you can stick onto a spaceship, after all, and still keep the engine going and the lights on. While not exhaustive, it might be useful to think of this as a triangle between how many weapons, how many defenses and how much engine you can stick onto it before you overrun on either of the two constricting factors.</p>
+			<img data-src="/img/warship_triangle.jpeg">
+            <p><i>Graph originally by <a href="https://www.projectrho.com/public_html/rocket/spacewarship.php#chungshipanalysis">Winchell Chung on Project Rho</a></i></p>
+            <br>
+            <p>
+                <span>The only way you can put more onto a vessel would then, consequently be, to increase your overall budget which also has its natural limits. For one, you now need to increase both the engine if you want the same performance as before, and you need to armor a larger surface area against threats, which can become very expensive if you rely on physical armor rather than just an active defense grid.</span>
+                <span>Where exactly you fall will obviously depend on the threats you face. If pirates are your primary concern, you might not need as much defenses as they will lack heavy weaponry, allowing you to invest more into propulsion or weapons. Conversely, if you expect the ships to be under heavy fire, it might be worth undergunning them a bit to get more defense in so they can be in the fight for longer and do more overall work.</span>
+            </p>
+            <p>Some other factors might also include how well it can integrate with the rest of your fleet. If your superspacegun can kill anything but it requires an entire new logistical chain to keep operating, it might not be worth it despite being super awesome. Strategic endurance, sensor capability, and command ability are also factors one might consider when designing a vessel but will tend to have lower effects on the aforementioned constraints.</p>
+            <p>Overall though, the tradeoffs you take should align the role of the craft and the larger doctrine it is operating within to ensure it can meet its requirements even if that comes at the cost of being worse at some specific things you might want it to be able to do.</p>
+
+            <h4 id="do-it-all">"Do-it-all" Ships</h4>
+            <p>Anyone who knows me, knows that I dislike ships designed to fulfill every role imaginable and hate battlecarriers. This is why. Any choice is eliminated, making "do-it-all" ships usually a bad idea from a multitude of perspectives, while offering little advantages over multiple designs.</p>
+            <p>
+                <span>In-universe, they will end up being much more expensive than they need to be, allowing you to field far fewer of them than you’d like to have. Alternatively, if they are constructed cheaper than would be required, they end up being <i>worse</i> at at least one task, or, if you are unfortunate enough, all of them, making the entire design worthless.</span>
+                <span>Out of -universe, it collapses almost all tactics you can give the reader. Formations stop mattering as every vessel is either identical or, if there are multiple generations of vessels, strictly worse at all tasks it could be given. All battles become a giant death ball without much rhyme or reason and little ability for individual characters to exert outsized influence.</span>
+            </p>
+            <p>Battlecarriers, ships that act as both a heavy-weapons platform (i.e. a battleship) and a launch vehicle (i.e. a carrier), are a particularly egregious offender. Capital ships should almost never try and spec into too many things. They are designed to kill other enemy capital ships and nothing else. If that ends up requiring big guns, you give them big guns; if it ends up requiring fighters, you give them fighters. If either works, you build two different designs to work in conjunction, but you do not combine them.</p>
+            <p>That all said, there are valid reasons to want multirole vessels. For example, if they will face unpredictable mission profiles, operate far away from home, and need that extra flexibility, or if a smaller force cannot afford to build dedicated vessels for every task. But even in those situations, they are not something most admirals would want in their fleet unless they had to put them there because no other options were available.</p>
+            <p>The existence of such vessels can be fine depending on what you are trying to write. If you are not interested in the overall state  of a battle because your POV characters are running off doing something else, then it does not really matter how things are progressing exactly, but that also probably means you do not need to describe individual ships either to begin with. </p>
+
+            <h3 id="doctrines">Doctrines</h4>
+            <p><i>This section is under construction!</i></p>
+
+            <h3 id="military-vessels">Exemplatory Vessels</h4>
+            <p><i>This section is under construction!</i></p>
+
+            <footer></footer>
+		</article>
+	</main>
+</body>
+</html>
