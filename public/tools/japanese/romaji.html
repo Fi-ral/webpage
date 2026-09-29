@@ -19,23 +19,23 @@
 		<aside id="sideboard-container"></aside>
         
 		<article>
-			<h1>Wapuro Romaji Converter</h1>
+			<h1 class="title">Wapuro Romaji Converter</h1 class="title">
 
 			<div>
-				<h4>Output</h4>
+				<h3>Output</h3>
 				<div class="romaji-output">
 					<p class="jp-text" id="romaji-output"></p>
 				</div>
 
 				<hr>
-				<h4>Input</h4>
+				<h3>Input</h3>
 				<div class="romaji-input">
 					<input type="text" id="romaji-input" oninput="KanaApp.convert(false)" onchange="KanaApp.convert(true)">
 					<button onclick="KanaApp.convert(true)">Enter</button>
 				</div>
 
 				<hr>
-				<h4>Settings</h4>
+				<h3>Settings</h3>
 				<div>
 					<span><input type="checkbox" id="setting-katakana-output" onchange="KanaApp.convert(false)"> Output as Katakana</span>
 				</div>

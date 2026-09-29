@@ -112,12 +112,12 @@ function addLazyLoadingImages(): void {
 }
 
 function addHeaderButtons(root: ParentNode = document): void {
-	const headerTags = ["h2", "h3", "h4", "h5"];
+	const headerTags = ["h1", "h2", "h3", "h4", "h5"];
 	const selector = headerTags.join(", ");
 
 	root.querySelectorAll<HTMLElement>(selector).forEach((heading) => {
 		const id = heading.id;
-		if (!id || heading.querySelector(".anchor-copy-button")) 
+		if (!id || heading.querySelector(".anchor-copy-button") || heading.querySelector("title"))
 			return;
 
 		const button = document.createElement("button");

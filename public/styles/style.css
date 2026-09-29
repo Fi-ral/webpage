@@ -40,6 +40,12 @@ span.further-info {
 }
 h1 {
 	color: var(--text-color);
+	font-size: 28px;
+	margin-top: 28px;
+	margin-bottom: 10px;
+}
+h1.title {
+	color: var(--text-color);
 	font-size: 32px;
 	margin-top: 28px;
 	margin-bottom: 12px;
@@ -60,6 +66,12 @@ h4 {
 	color: var(--text-color);
 	font-size: 16px;
 	margin-top: 18px;
+	margin-bottom: 4px;
+}
+h5 {
+	color: var(--text-color);
+	font-size: 16px;
+	margin-top: 12px;
 	margin-bottom: 4px;
 }
 li {
