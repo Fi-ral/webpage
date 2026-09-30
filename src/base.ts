@@ -32,7 +32,7 @@ function createSideboard() {
 			</div>
 			<br>
 	
-			<div>
+			<!--<div>
 			<h3><a href="/projects">Projects</a></h3>
 			<button class="show-more-button" id="button-1" onclick="toggleReveal(1)">+ Show</button>
 			<ul id="hidden-1" style="display: none;">
@@ -40,13 +40,13 @@ function createSideboard() {
 				<li><span><a href="/projects/dust_and_dawn.html">Dust & Dawn</a></span></li>
 			</ul>
 			</div>
-			<br>
+			<br>-->
 
 			<div>
 				<h3><a href="/articles">Articles</a></h3>
 				<button class="show-more-button" id="button-2" onclick="toggleReveal(2)">+ Show</button>
 				<ul id="hidden-2" style="display: none;">
-					<li><span><a href="/articles/spaceship_guide.html">Spaceship Guide</a></span></li>
+					<!--<li><span><a href="/articles/spaceship_guide.html">Spaceship Guide</a></span></li>-->
 					<li><span><a href="/articles/sophont_scale.html">Sophont Scale</a></span></li>
 					<li><span><a href="/articles/standard_technologies.html">Standard Technologies</a></span></li>
 					<li><span><a href="/articles/planet_classifications.html">Planet Classifications</a></span></li>
